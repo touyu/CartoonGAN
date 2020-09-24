@@ -4,4 +4,4 @@
 *.pth
 
 data
-*_result
+*_results
