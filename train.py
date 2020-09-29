@@ -47,7 +47,7 @@ def make_edge_promoting_img():
     # edge-promoting
     if not os.path.isdir(os.path.join('data', args.tgt_data, 'pair')):
         print('edge-promoting start!!')
-        edge_promoting(os.path.join('data', args.tgt_data, 'train'), os.path.join('data', args.tgt_data, 'pair'))
+        edge_promoting(os.path.join('data', args.tgt_data, 'train'), os.path.join('data', args.tgt_data, 'pair'), args.input_size)
     else:
         print('edge-promoting already done')
 

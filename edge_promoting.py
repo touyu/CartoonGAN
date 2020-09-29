@@ -2,7 +2,7 @@ import cv2, os
 import numpy as np
 from tqdm import tqdm
 
-def edge_promoting(root, save):
+def edge_promoting(root, save, size):
     file_list = os.listdir(root)
     if not os.path.isdir(save):
         os.makedirs(save)
@@ -14,9 +14,9 @@ def edge_promoting(root, save):
     for f in tqdm(file_list):
         rgb_img = cv2.imread(os.path.join(root, f))
         gray_img = cv2.imread(os.path.join(root, f), 0)
-        rgb_img = cv2.resize(rgb_img, (256, 256))
+        rgb_img = cv2.resize(rgb_img, (size, size))
         pad_img = np.pad(rgb_img, ((2,2), (2,2), (0,0)), mode='reflect')
-        gray_img = cv2.resize(gray_img, (256, 256))
+        gray_img = cv2.resize(gray_img, (size, size))
         edges = cv2.Canny(gray_img, 100, 200)
         dilation = cv2.dilate(edges, kernel)
 
