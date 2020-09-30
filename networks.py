@@ -25,7 +25,7 @@ class resnet_block(nn.Module):
 
 class generator(nn.Module):
     # initializers
-    def __init__(self, in_nc, out_nc, nf=32, nb=6):
+    def __init__(self, in_nc, out_nc, nf=32, nb=8):
         super(generator, self).__init__()
         self.input_nc = in_nc
         self.output_nc = out_nc
